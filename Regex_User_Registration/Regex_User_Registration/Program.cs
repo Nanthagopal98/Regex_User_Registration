@@ -3,6 +3,7 @@ Console.WriteLine("1 - Enter First Name");
 Console.WriteLine("2 - Enter Last Name");
 Console.WriteLine("3 - Enter Enail-id");
 Console.WriteLine("4 - Enter Mobile Number");
+Console.WriteLine("5 - Enter Password");
 int select =Convert.ToInt32(Console.ReadLine());
 switch (select)
 {
@@ -17,7 +18,7 @@ switch (select)
         regex.name(lName);
         break;
     case 3:
-        Console.WriteLine("Enter Enail-id");
+        Console.WriteLine("Enter Email-id");
         string id = Console.ReadLine();
         regex.email(id);
         break;
@@ -26,5 +27,9 @@ switch (select)
         string number = Console.ReadLine();
         regex.ContactNumber(number);
         break;
-
+    case 5:
+        Console.WriteLine("Enter Password");
+        string inputPassword = Console.ReadLine();
+        regex.Password(inputPassword);
+        break;
 }

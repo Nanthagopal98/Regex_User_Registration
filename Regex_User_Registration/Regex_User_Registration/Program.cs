@@ -4,7 +4,6 @@ Console.WriteLine("2 - Enter Last Name");
 Console.WriteLine("3 - Enter Enail-id");
 Console.WriteLine("4 - Enter Mobile Number");
 Console.WriteLine("5 - Enter Password");
-Console.WriteLine("10 - Enter Password");
 int select =Convert.ToInt32(Console.ReadLine());
 switch (select)
 {

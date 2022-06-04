@@ -9,5 +9,10 @@ switch (select)
         string fName = Console.ReadLine();
         regex.name(fName);
         break;
-    
+    case 2:
+        Console.WriteLine("Enter Last Name");
+        string lName = Console.ReadLine();
+        regex.name(lName);
+        break;
+
 }

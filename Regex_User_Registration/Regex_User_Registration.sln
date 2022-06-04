@@ -3,7 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32516.85
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Regex_User_Registration", "Regex_User_Registration\Regex_User_Registration.csproj", "{E3F0C0D6-AC0A-497B-81BC-2F20C9F61D00}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Regex_User_Registration", "Regex_User_Registration\Regex_User_Registration.csproj", "{E3F0C0D6-AC0A-497B-81BC-2F20C9F61D00}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestUserInfo", "TestEmail\TestUserInfo.csproj", "{D23895AD-9EBC-4BAC-8A04-F8A859C7771F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E3F0C0D6-AC0A-497B-81BC-2F20C9F61D00} = {E3F0C0D6-AC0A-497B-81BC-2F20C9F61D00}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +20,10 @@ Global
 		{E3F0C0D6-AC0A-497B-81BC-2F20C9F61D00}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E3F0C0D6-AC0A-497B-81BC-2F20C9F61D00}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E3F0C0D6-AC0A-497B-81BC-2F20C9F61D00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D23895AD-9EBC-4BAC-8A04-F8A859C7771F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D23895AD-9EBC-4BAC-8A04-F8A859C7771F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D23895AD-9EBC-4BAC-8A04-F8A859C7771F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D23895AD-9EBC-4BAC-8A04-F8A859C7771F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

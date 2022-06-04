@@ -7,7 +7,7 @@ using System.Text.RegularExpressions;
 
 namespace Regex_User_Registration
 {
-    internal class RegularExpression
+    public class RegularExpression
     {
         public void name(string name)
         {
@@ -16,21 +16,19 @@ namespace Regex_User_Registration
             if(Regex.IsMatch(name, NAME))
             {
                 Console.WriteLine(name + " is a valid Name");
-                return;
             }
             Console.WriteLine(name + " is a invalid Name");
-            return;
         }
-        public void email(string id)
+        public bool email(string id)
         {
-            const string mailId = "^[a-zA-z0-9]+[.]{0,1}[a-zA-z0-9]+([@]?)+[a-z]{1,15}[.]+(com|co)+((.in)*)$";
+            const string mailId = "^[a-zA-z0-9]+([.+-]?[a-zA-z0-9]+)@[a-z0-9]+[.]?(com|co|net)+((.in|.au|.us)*)$";
             if(Regex.IsMatch(id, mailId))
             {
                 Console.WriteLine(id + " is a valid Email");
-                return;
+                return true;
             }
             Console.WriteLine(id + " is a invalid Email");
-            return;
+            return false;
         }
         public void ContactNumber(string number)
         {
@@ -38,10 +36,8 @@ namespace Regex_User_Registration
             if (Regex.IsMatch(number, numberRegex))
             {
                 Console.WriteLine(number + " is a valid Number");
-                return;
             }
-            Console.WriteLine(number + " is a invalid Number");
-            return;        
+            Console.WriteLine(number + " is a invalid Number");       
         }
         public void Password(string password)
         {
@@ -49,10 +45,8 @@ namespace Regex_User_Registration
             if( Regex.IsMatch(password, passwordRegex))
             {
                 Console.WriteLine(password + " is a valid Password");
-                return;
             }
             Console.WriteLine(password + " is a invalid Password");
-            return;
         }        
     }
 }

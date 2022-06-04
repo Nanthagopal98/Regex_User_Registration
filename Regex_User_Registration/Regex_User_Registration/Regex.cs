@@ -31,8 +31,17 @@ namespace Regex_User_Registration
             }
             Console.WriteLine(id + " is a invalid Email");
             return;
-
         }
-        
+        public void ContactNumber(string number)
+        {
+            const string numberRegex = "^(91 )[6-9]{1}[0-9]{9}$";
+            if (Regex.IsMatch(number, numberRegex))
+            {
+                Console.WriteLine(number + " is a valid Number");
+                return;
+            }
+            Console.WriteLine(number + " is a invalid Number");
+            return;        
+        }
     }
 }

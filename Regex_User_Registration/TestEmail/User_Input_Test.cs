@@ -38,5 +38,23 @@ namespace TestUserInput
             string password = "AbcdA@123Ac12";
             Assert.IsTrue(regularExpression.Password(password));
         }
+        [Test]
+        public void CheckUserInputEmailToEmailRegex()
+        {           
+            string[] inputId = System.IO.File.ReadAllLines(@"D:\Bridgelabz\.Net\Regex_User_Registration\Regex_User_Registration\TestEmail\Email_id_Valid.txt");
+            foreach (string input in inputId)
+            {
+                Assert.IsTrue(regularExpression.email(input));
+            }
+        }
+        [Test]
+        public void CheckInvalidUserInputEmailToEmailRegex()
+        {
+            string[] inputId = System.IO.File.ReadAllLines(@"D:\Bridgelabz\.Net\Regex_User_Registration\Regex_User_Registration\TestEmail\Email_id_Invalid.txt");
+            foreach (string input in inputId)
+            {
+                Assert.IsFalse(regularExpression.email(input));
+            }
+        }
     }
 }

@@ -54,5 +54,6 @@ namespace Regex_User_Registration
             Console.WriteLine(password + " is a invalid Password");
             return false;
         }        
+
     }
 }

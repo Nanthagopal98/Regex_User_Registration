@@ -10,12 +10,12 @@ switch (select)
     case 1:
         Console.WriteLine("Enter First Name");
         string fName = Console.ReadLine();
-        regex.name(fName);
+        regex.Name(fName);
         break;
     case 2:
         Console.WriteLine("Enter Last Name");
         string lName = Console.ReadLine();
-        regex.name(lName);
+        regex.Name(lName);
         break;
     case 3:
         Console.WriteLine("Enter Email-id");

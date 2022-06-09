@@ -9,17 +9,17 @@ namespace Regex_User_Registration
 {
     public class RegularExpression
     {
-        public void name(string name)
+        public string Name(string name)
         {
             const string NAME = "^[A-Z]{1}[a-z]{2,}$";
                       
             if(Regex.IsMatch(name, NAME))
             {
                 Console.WriteLine(name + " is a valid Name");
-                return;
+                return name;
             }
             Console.WriteLine(name + " is a invalid Name");
-            return;
+            return null;
         }
         public bool email(string id)
         {
@@ -32,27 +32,27 @@ namespace Regex_User_Registration
             Console.WriteLine(id + " is a invalid Email");
             return false;
         }
-        public void ContactNumber(string number)
+        public bool ContactNumber(string number)
         {
             const string numberRegex = "^(91 )[6-9]{1}[0-9]{9}$";
             if (Regex.IsMatch(number, numberRegex))
             {
                 Console.WriteLine(number + " is a valid Number");
-                return;
+                return true;
             }
             Console.WriteLine(number + " is a invalid Number");
-            return;
+            return false;
         }
-        public void Password(string password)
+        public bool Password(string password)
         {
-            const string passwordRegex = "^((?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.?[!@#$%&])).{8,}$";
-            if( Regex.IsMatch(password, passwordRegex))
+            const string passwordRegex = "^(?=[A-za-z0-9,]*[!#@$%^&][a-zA-Z0-9]*$)[]a-zA-Z0-9,!#@$%^&]+.{8,}";
+            if ( Regex.IsMatch(password, passwordRegex))
             {
                 Console.WriteLine(password + " is a valid Password");
-                return;
+                return true;
             }
             Console.WriteLine(password + " is a invalid Password");
-            return;
+            return false;
         }        
     }
 }

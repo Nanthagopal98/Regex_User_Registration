@@ -8,35 +8,72 @@ namespace TestUserInput
         RegularExpression regularExpression = new RegularExpression();
         [Test]
         public void GivenFirstName_ReturnValidOrNot()
-        {           
-            string name = "Nantha";
-            string Expected = regularExpression.Name(name);
-            Assert.AreEqual(name, Expected);
+        {
+            try
+            {
+                string name = "Nantha@";
+                string Expected = regularExpression.FirstName(name);
+                Assert.AreEqual(name, Expected);
+            }
+            catch(CustomExceptions e)
+            {
+                Assert.AreEqual("Invalid FirstName", e.Message);
+            }
         }
         [Test]
         public void GivenLasttName_ReturnValidOrNot()
         {
-            string name = "Shanmugam";
-            string Expected = regularExpression.Name(name);
-            Assert.AreEqual(name, Expected);
+            try
+            {
+                string name = "Shanmugam";
+                string Expected = regularExpression.LastName(name);
+                Assert.AreEqual(name, Expected);
+            }
+            catch (CustomExceptions e)
+            {
+                Assert.AreEqual("Invalid LastName", e.Message); 
+            }
+
         }
         [Test]
         public void GivenEmailId_ReturnTrue()
         {
-            string inputEmail = "s.nantha@gmail.com";                 
-            Assert.IsTrue(regularExpression.email(inputEmail));            
+            try
+            {
+                string inputEmail = "s.nantha@gmail.com";                
+                string result = (regularExpression.email(inputEmail));
+                Assert.AreEqual("Valid", result);
+            }
+            catch(CustomExceptions e)
+            {
+                Assert.AreEqual("Invalid Email Id", e.Message);
+            }
         }
         [Test]
         public void GivenMobileNumber_ReturnTrue()
         {
-            string mobileNumber = "91 9842778899";
-            Assert.IsTrue(regularExpression.ContactNumber(mobileNumber));
+            try
+            {
+                string mobileNumber = "91 9842778899";
+                Assert.IsTrue(regularExpression.ContactNumber(mobileNumber));
+            }
+            catch(CustomExceptions e)
+            {
+                Assert.AreEqual("Invalid Contact Number", e.Message);
+            }
         }
         [Test]
         public void GivenPassword_ReturnTrue()
         {
-            string password = "AbcdA@123Ac12";
-            Assert.IsTrue(regularExpression.Password(password));
+            try
+            {
+                string password = "AbcdA@123Ac12";
+                Assert.IsTrue(regularExpression.Password(password));
+            }
+            catch(CustomExceptions e)
+            {
+                Assert.AreEqual("Invalid Contact Number", e.Message);
+            }
         }
         [Test]
         public void CheckUserInputEmailToEmailRegex()
@@ -44,7 +81,8 @@ namespace TestUserInput
             string[] inputId = System.IO.File.ReadAllLines(@"D:\Bridgelabz\.Net\Regex_User_Registration\Regex_User_Registration\TestEmail\Email_id_Valid.txt");
             foreach (string input in inputId)
             {
-                Assert.IsTrue(regularExpression.email(input));
+                string result = regularExpression.email(input);
+                Assert.AreEqual("Valid", result);                
             }
         }
         [Test]
@@ -53,7 +91,15 @@ namespace TestUserInput
             string[] inputId = System.IO.File.ReadAllLines(@"D:\Bridgelabz\.Net\Regex_User_Registration\Regex_User_Registration\TestEmail\Email_id_Invalid.txt");
             foreach (string input in inputId)
             {
-                Assert.IsFalse(regularExpression.email(input));
+                try
+                {
+                    string result = regularExpression.email(input);                   
+                }
+                catch(CustomExceptions e)
+                {
+                    Assert.AreEqual("Invalid Email Id", e.Message);
+                }
+                
             }
         }
     }
